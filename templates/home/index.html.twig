@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello HomeController!{% endblock %}
+
+{% block body %}
+<style>
+    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 20px/1.5 sans-serif; }
+    .example-wrapper article { background: #F5F5F5; padding: 6px 6px; font : 20px/1.5 sans-serif;}
+    .example-wrapper paragraph {padding: 2px 6px; font : 15px/1.5 sans-serif;}
+</style>
+
+<div class="example-wrapper">
+    {% if app.user %}
+
+        <h1>Hello {{ app.user.name }}! </h1>
+
+    {% else %}
+
+        <h1>Hello {{ controller_name }}! ✅</h1>
+
+    {% endif %}
+    <h2> {{ ecole }}! </h2> 
+    {% for article in articles %}
+    <h3><article>{{ article.title }}</article></h3>
+    <p><paragraph>{{ article.content }}</paragraph></p>
+    <p> written by {{ article.author.name }} </p>
+    {% endfor %}
+</div>
+{% endblock %}
